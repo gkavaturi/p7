@@ -6,7 +6,8 @@
       el: '#actions-wrapper',
 
       events: {
-        'click .buy-now': 'reserveSlot'
+        'click .buy-now': 'reserveSlot',
+        'click .parking-lot': 'showInMaps' 
       },
 
       initialize: function(options){
@@ -15,15 +16,12 @@
         _.bindAll(this, 'render');
         _.bindAll(this, 'reserveSlot');
 
+        this.collection.on('add', this.render);
+
         this.options = options || {};
         //since backbone 1.1.0 (oct 2013) backbone no longer passes options by default
 
-        this.collection.fetch({
-          success: that.render,
-          error: function(){
-            console.log('Fetching available parking spots failed');
-          }
-        });
+        this.render();
       },
 
       render: function(){
@@ -45,7 +43,14 @@
         model.set('date', date);
 
         reservations.add(model);    
-            
+      },
+
+      showInMaps: function(e){
+        var id = $(e.target).data('id'),
+            model = this.collection.get(id);
+
+        model.set('active', true)
+
       }
     });
 })(window.Project07, window.Backbone, window._, window.jQuery);

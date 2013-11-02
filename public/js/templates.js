@@ -14,7 +14,7 @@ __p+='<tr data-id="'+
 '"><td>'+
 ((__t=( name ))==null?'':__t)+
 '</td><td>'+
-((__t=( location ))==null?'':__t)+
+((__t=( address ))==null?'':__t)+
 '</td><td>'+
 ((__t=( date ))==null?'':__t)+
 '</td><td><button class="btn btn-danger">Cancel</button></tr>';
@@ -33,13 +33,17 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<div class="panel panel-default">\n    <div class="panel-heading">\n      <h4 class="panel-title">\n        <a data-toggle="collapse" data-parent="#accordion" href="#'+
 ((__t=( id ))==null?'':__t)+
-'">\n          '+
+'" data-id="'+
+((__t=( id ))==null?'':__t)+
+'" class="parking-lot">\n          '+
 ((__t=( name ))==null?'':__t)+
 '\n        </a>\n      </h4>\n    </div>\n    <div id="'+
 ((__t=( id ))==null?'':__t)+
 '" data-id="'+
 ((__t=( id ))==null?'':__t)+
-'" class="panel-collapse collapse">\n      <div class="panel-body">\n        <div class="row">\n          <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">No. slots left: <strong>14</strong></div>\n          <div class="col-xs-6 col-sm-8 col-md-8 col-lg-9">\n            <button class="btn btn-success buy-now pull-right">\n              <span class="col-sm-4 glyphicon glyphicon-shopping-cart shopping-cart"></span> \n              <span class="hidden-xs col-sm-8 shopping-cart-label">Buy Full Day Pass</span>\n            </button></div>\n        </div>\n      </div>\n    </div>\n  </div>';
+'" class="panel-collapse collapse">\n      <div class="panel-body">\n        <div class="row">\n          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">'+
+((__t=( address ))==null?'':__t)+
+'</div>\n          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">\n            <button class="btn btn-success buy-now pull-right">\n              <span class="col-sm-4 glyphicon glyphicon-shopping-cart shopping-cart"></span> \n              <span class="hidden-xs col-sm-8 shopping-cart-label">Buy Full Day Pass</span>\n            </button></div>\n        </div>\n      </div>\n    </div>\n  </div>';
 }
 return __p;
 };

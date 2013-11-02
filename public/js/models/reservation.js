@@ -4,7 +4,8 @@
     defaults: {
         'name': 'Name UnAvailable',
         'date': 'Date UnAvailable',
-        'location': 'Location UnAvailable'
+        'location': 'Location UnAvailable',
+        'address': 'Address UnAvailable'
     },
 
     initialize: function(){

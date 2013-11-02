@@ -5,15 +5,17 @@
 
       el: '#maps',
 
-      initialize: function(){
-
+      initialize: function(options){
         _.bindAll(this, 'showMarkers');
+        _.bindAll(this, 'highlightMarker');
+
         google.maps.visualRefresh = true;
+
+        this.options = options || {}; 
         this.render();
-        
       },
 
-      render: function(){
+      render: function(options){
         var defaultLocation = new google.maps.LatLng(37.77493, -122.41942),
             defaultZoom = 16,
             mapOptions = {
@@ -25,9 +27,9 @@
             map = new google.maps.Map(document.getElementById('map-canvas'),
                   mapOptions);
 
-        this.options = this.options || {};        
         this.options.map = map;
         this.options.location = defaultLocation;
+        this.options.activeMarkers = {};
 
         var input = document.getElementById('search-query');
         var options = {
@@ -71,6 +73,8 @@
               radius: '200',
               query: 'Parking'    
             },
+            that = this,
+            results = this.options.results,
             service = new google.maps.places.PlacesService(map);
 
         service.textSearch(request, function(data) {
@@ -88,10 +92,30 @@
                     scaledSize: new google.maps.Size(25, 25)
                   },
                   title: obj.name
-                });
+                }),
+                id = obj.id,
+                resultItem = new App.models.ResultItem();
+
+            //add event handlers to resulItem to react if the item is active
+            resultItem.on('change:active', that.highlightMarker);    
+            
+            resultItem.set({
+              id: obj.id,
+              name: obj.name,
+              address: obj.formatted_address,
+              location: obj.geometry.location
+            })
+            results.add(resultItem);
+            that.options.activeMarkers[id] = marker;
             marker.setVisible(true);
           });
         });
+      },
+
+      highlightMarker: function(model){
+        var id = model.get('id'),
+            marker = this.options.activeMarkers[id];
+            
       }
 
     });
