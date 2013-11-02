@@ -1,0 +1,23 @@
+.main-title {
+  text-align: center;
+}
+.select-date.control-label {
+  text-align: left;
+}
+.buy-now .shopping-cart {
+  padding-left: 0px;
+}
+.buy-now .shopping-cart-label {
+  padding: 0px 0px 0px 5px;
+}
+#map-canvas {
+  width: 560px;
+  height: 560px;
+}
+#reservations {
+  table-layout: fixed;
+}
+#reservations-wrapper {
+  margin-top: 10px;
+  margin-left: 0px;
+}
