@@ -10,6 +10,9 @@
         var that = this;
         _.bindAll(this, 'render');
 
+        this.collection.on('add', this.render);
+        this.collection.on('remove', this.render);
+
         this.collection.fetch({
           success: that.render,
           error: function(){

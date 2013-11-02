@@ -18,7 +18,8 @@
         this.showView(new App.views.MapsView());
 
         this.showView(new App.views.ResultsView({
-          collection: results
+          collection: results,
+          reservations: reservations
         }));
         this.showView(new App.views.ReservationsView({
           collection: reservations

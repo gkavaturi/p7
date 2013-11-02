@@ -1,10 +1,10 @@
 [
     {
         "name": "Test Item 1",
-        "location": "TestLocation1"
+        "location": "Test Location1"
     },
     {
-        "name": "TestItem2",
-        "location": "TestLocation2"
+        "name": "Test Item2",
+        "location": "Test Location2"
     }
 ]
