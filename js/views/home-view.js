@@ -15,7 +15,9 @@
             baseView = this;
 
         this.$el.html(this.template());
-        this.showView(new App.views.MapsView());
+        this.showView(new App.views.MapsView({
+          results: results
+        }));
 
         this.showView(new App.views.ResultsView({
           collection: results,

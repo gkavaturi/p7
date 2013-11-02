@@ -3,7 +3,7 @@
 
       model: App.models.ResultItem,
 
-      url: 'data/results-sample.json',
+      // url: 'data/results-sample.json',
 
 
     });
