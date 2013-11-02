@@ -1,5 +1,5 @@
 (function (App, Backbone, _, $, undefined) {
-    App.views.BaseView = Backbone.View.extend({
+    App.models.BaseModel = Backbone.Model.extend({
 
     defaults: {
     
