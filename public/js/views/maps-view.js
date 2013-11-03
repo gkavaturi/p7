@@ -83,6 +83,7 @@
             return;
           }
           console.log(data);
+          results.reset();
           data.forEach(function(obj){
             var marker = new google.maps.Marker({
                   position: obj.geometry.location,
@@ -115,7 +116,7 @@
       highlightMarker: function(model){
         var id = model.get('id'),
             marker = this.options.activeMarkers[id];
-            
+
       }
 
     });
