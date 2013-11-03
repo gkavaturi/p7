@@ -1,1 +1,10 @@
-<tr data-id="<%= id %>"><td><%= name %></td><td><%= address %></td><td><%= date %></td><td>Space No. <%= spaceNum %></td><td><button class="btn btn-danger"><span class="hidden-xs">Cancel Reservation</span></button></tr>
+<tr data-id="<%= id %>">
+  <td><%= name %></td><td><%= address %></td>
+  <td><%= date %></td><td>Space No. <%= spaceNum %></td>
+  <td>
+    <button class="btn btn-danger row">
+      <span class="col-xs-12 col-sm-2 col-md-2 col-lg-2 glyphicon glyphicon-remove shopping-cart"></span>
+      <span class="hidden-xs hidden-sm col-md-10 col-lg-10 shopping-cart-label">Cancel Reservation</span>
+    </button>
+  </td>
+</tr>

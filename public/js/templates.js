@@ -11,15 +11,15 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<tr data-id="'+
 ((__t=( id ))==null?'':__t)+
-'"><td>'+
+'">\n  <td>'+
 ((__t=( name ))==null?'':__t)+
 '</td><td>'+
 ((__t=( address ))==null?'':__t)+
-'</td><td>'+
+'</td>\n  <td>'+
 ((__t=( date ))==null?'':__t)+
 '</td><td>Space No. '+
 ((__t=( spaceNum ))==null?'':__t)+
-'</td><td><button class="btn btn-danger"><span class="hidden-xs">Cancel Reservation</span></button></tr>';
+'</td>\n  <td>\n    <button class="btn btn-danger row">\n      <span class="col-xs-12 col-sm-2 col-md-2 col-lg-2 glyphicon glyphicon-remove shopping-cart"></span>\n      <span class="hidden-xs hidden-sm col-md-10 col-lg-10 shopping-cart-label">Cancel Reservation</span>\n    </button>\n  </td>\n</tr>';
 }
 return __p;
 };
@@ -45,7 +45,7 @@ __p+='<div class="panel panel-default">\n    <div class="panel-heading">\n      
 ((__t=( id ))==null?'':__t)+
 '" class="panel-collapse collapse">\n      <div class="panel-body">\n        <div class="row">\n          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">'+
 ((__t=( address ))==null?'':__t)+
-'</div>\n          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">\n            <button class="btn btn-success buy-now pull-right">\n              <span class="col-sm-4 glyphicon glyphicon-shopping-cart shopping-cart"></span> \n              <span class="hidden-xs col-sm-8 shopping-cart-label">Buy Full Day Pass</span>\n            </button></div>\n        </div>\n      </div>\n    </div>\n  </div>';
+'</div>\n          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">\n            <button class="btn btn-success buy-now pull-right">\n              <span class="col-sm-4 glyphicon glyphicon-shopping-cart shopping-cart"></span> \n              <span class="hidden-xs hidden-sm-8 shopping-cart-label">Buy Full Day Pass</span>\n            </button></div>\n        </div>\n      </div>\n    </div>\n  </div>';
 }
 return __p;
 };
