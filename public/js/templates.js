@@ -2,7 +2,7 @@ window.Project07.tmpl = window.Project07.tmpl || {};
 Project07.tmpl.home = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="container">\r\n   <div class="well row">\r\n    <div class="input-group">\r\n      <input type="text" id="search-query" class="form-control">\r\n      <span class="input-group-btn">\r\n        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>\r\n      </span>\r\n    </div><!-- /input-group -->\r\n  </div>\r\n  <div class="row">\r\n    <div id="maps-wrapper" class="col-md-6">\r\n      <!-- <h1>Maps</h1> -->\r\n      <div id="map-canvas">\r\n      </div>\r\n    </div>\r\n    <div id="actions-wrapper" class="col-md-6">\r\n      \r\n    </div>\r\n  </div>\r\n  <div id="reservations-wrapper" class="row">\r\n\r\n  </div>\r\n</div>\r\n';
+__p+='<div class="container">\r\n   <div class="well row">\r\n    <div class="input-group">\r\n      <input type="text" id="search-query" class="form-control" placeholder="Start typing an address ...">\r\n      <span class="input-group-btn">\r\n        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" ></span></button>\r\n      </span>\r\n    </div><!-- /input-group -->\r\n  </div>\r\n  <div class="row">\r\n    <div id="maps-wrapper" class="col-md-6">\r\n      <!-- <h1>Maps</h1> -->\r\n      <div id="map-canvas">\r\n      </div>\r\n    </div>\r\n    <div id="actions-wrapper" class="col-md-6">\r\n      \r\n    </div>\r\n  </div>\r\n  <div id="reservations-wrapper" class="row">\r\n\r\n  </div>\r\n</div>\r\n';
 }
 return __p;
 };
@@ -17,7 +17,9 @@ __p+='<tr data-id="'+
 ((__t=( address ))==null?'':__t)+
 '</td><td>'+
 ((__t=( date ))==null?'':__t)+
-'</td><td><button class="btn btn-danger">Cancel</button></tr>';
+'</td><td>Space No. '+
+((__t=( spaceNum ))==null?'':__t)+
+'</td><td><button class="btn btn-danger"><span class="hidden-xs">Cancel Reservation</span></button></tr>';
 }
 return __p;
 };

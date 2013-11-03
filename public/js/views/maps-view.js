@@ -8,6 +8,7 @@
       initialize: function(options){
         _.bindAll(this, 'showMarkers');
         _.bindAll(this, 'highlightMarker');
+        _.bindAll(this, 'showInResults');
 
         google.maps.visualRefresh = true;
 
@@ -88,35 +89,63 @@
             var marker = new google.maps.Marker({
                   position: obj.geometry.location,
                   map: map,
-                  icon:{
+                  icon: {
                     url: 'img/parking.png',
                     scaledSize: new google.maps.Size(25, 25)
                   },
-                  title: obj.name
+                  title: obj.name,
+                  modelId: obj.id
                 }),
+                infoWindow = new google.maps.InfoWindow();
                 id = obj.id,
                 resultItem = new App.models.ResultItem();
 
             //add event handlers to resulItem to react if the item is active
             resultItem.on('change:active', that.highlightMarker);    
-            
+
+            google.maps.event.addListener(marker, 'click', function(){
+              that.showInResults(this.get('modelId'));
+            });
+
             resultItem.set({
               id: obj.id,
               name: obj.name,
               address: obj.formatted_address,
               location: obj.geometry.location
-            })
+            });
+
             results.add(resultItem);
             that.options.activeMarkers[id] = marker;
             marker.setVisible(true);
+            infoWindow.setContent(obj.name);
+            // infoWindow.open(map, marker);
           });
         });
       },
 
       highlightMarker: function(model){
+        if(model.get('active') !== true)
+          return;
         var id = model.get('id'),
             marker = this.options.activeMarkers[id];
 
+        if (this.options.recentMarker)
+          this.options.recentMarker.setIcon({
+                      url: 'img/parking.png',
+                      scaledSize: new google.maps.Size(25, 25)
+                    });
+
+        marker.setIcon({
+                    url: 'img/parking.png',
+                    scaledSize: new google.maps.Size(50, 50)
+                  });
+        this.options.recentMarker = marker;
+      },
+
+      showInResults: function(modelId){
+        var result = this.options.results.get(modelId);
+        result.set('active', true);
+        this.highlightMarker(result);
       }
 
     });

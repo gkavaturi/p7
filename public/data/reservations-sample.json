@@ -1,12 +1,9 @@
 [
     {
-        "name": "Test Item 1",
-        "location": "TestLocation1",
-        "date": "11-10-2013"
-    },
-    {
-        "name": "TestItem2",
-        "location": "TestLocation2",
-        "date": "11-14-2013"
+        "name": "Performing Arts Garage",
+        "address": "360 Grove Street, San Francisco, CA, United States",
+        "location": "N/A",
+        "date": "11-10-2013",
+        "spaceNum": "329"
     }
 ]

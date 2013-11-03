@@ -5,7 +5,8 @@
         'name': 'Name UnAvailable',
         'date': 'Date UnAvailable',
         'location': 'Location UnAvailable',
-        'address': 'Address UnAvailable'
+        'address': 'Address UnAvailable',
+        'spaceNum': null
     },
 
     initialize: function(){

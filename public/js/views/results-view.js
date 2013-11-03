@@ -41,6 +41,7 @@
             reservations = this.options.reservations;
 
         model.set('date', date);
+        model.set('spaceNum', this.set('numSpaces', Math.round(Math.random() * (100-1)+1)));
 
         reservations.add(model);    
       },
@@ -48,8 +49,11 @@
       showInMaps: function(e){
         var id = $(e.target).data('id'),
             model = this.collection.get(id);
-
-        model.set('active', true)
+            
+        if (this.options.currentActiveModel)
+          this.options.currentActiveModel.set('active', false);
+        model.set('active', true);
+        this.options.currentActiveModel = model;
 
       }
     });

@@ -6,7 +6,7 @@
         'date': 'Date UnAvailable',
         'location': 'Location UnAvailable',
         'address': 'Address UnAvailable',
-        'numSlots': 'N/A'
+        'numSpaces': 'N/A'
     },
 
     initialize: function(){
@@ -15,7 +15,7 @@
 
         //random no of available slots
 
-        this.set('numSlots', Math.round(Math.random() * (100-1)+1));
+        this.set('numSpaces', Math.round(Math.random() * (100-1)+1));
 
         return this;
     }
