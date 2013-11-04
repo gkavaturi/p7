@@ -4,15 +4,36 @@
 .select-date.control-label {
   text-align: left;
 }
-.buy-now .shopping-cart {
+.shopping-cart,
+.reservation-cancel {
   padding-left: 0px;
+  padding-top: 2px;
 }
-.buy-now .shopping-cart-label {
-  padding: 0px 0px 0px 5px;
+.shopping-cart-label {
+  padding: 0px 0px 0px 10px;
 }
 #map-canvas {
-  width: 560px;
   height: 560px;
+}
+@media (min-width: 1200px) {
+  #map-canvas {
+    width: 560px;
+  }
+}
+@media (max-width: 1199px) and (min-width: 992px) {
+  #map-canvas {
+    width: 475px;
+  }
+}
+@media (max-width: 991px) and (min-width: 720px) {
+  #map-canvas {
+    width: 720px;
+  }
+}
+@media (max-width: 719px) {
+  #map-canvas {
+    width: 100%;
+  }
 }
 #reservations {
   table-layout: fixed;
@@ -20,4 +41,37 @@
 #reservations-wrapper {
   margin-top: 10px;
   margin-left: 0px;
+}
+.no-reservations {
+  margin-bottom: 10px;
+}
+.mini-notification {
+  position: fixed;
+  color: white;
+  margin: auto;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  z-index: 999;
+  font-size: 24px;
+  width: 320px;
+  height: 50px;
+  line-height: 25px;
+  padding: 10px;
+  border-radius: 7px;
+  text-align: center;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.mini-notification.danger {
+  background-color: #d9534f;
+}
+.mini-notification.danger-lg {
+  height: 75px;
+}
+.mini-notification.success {
+  background-color: #47a447;
+  height: 75px;
 }

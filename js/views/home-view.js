@@ -10,10 +10,11 @@
       },
 
       render: function(){
-        var reservations = new App.collections.Reservations(),
+        var reservations = new App.collections.Results(),
             results = new App.collections.Results(),
             baseView = this;
-
+        reservations.url = 'data/reservations-sample.json';
+        
         this.$el.html(this.template());
         this.showView(new App.views.MapsView({
           results: results

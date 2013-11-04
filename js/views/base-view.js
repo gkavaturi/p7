@@ -3,6 +3,14 @@
 
       showView: function(){
         return this;
+      },
+
+      showMiniNotification: function(message, classNames){
+        this.$el.find('.mini-notification').remove();
+        this.$el.append(App.tmpl.miniNotification({
+          message: message,
+          classNames: classNames
+        }));
       }      
 
     });

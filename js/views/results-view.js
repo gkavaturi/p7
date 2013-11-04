@@ -15,8 +15,11 @@
         var that = this;
         _.bindAll(this, 'render');
         _.bindAll(this, 'reserveSlot');
+        _.bindAll(this, 'activateResult');
 
         this.collection.on('add', this.render);
+
+        this.collection.on('change:active',  this.activateResult);
 
         this.options = options || {};
         //since backbone 1.1.0 (oct 2013) backbone no longer passes options by default
@@ -40,16 +43,41 @@
             model = this.collection.get(id),
             reservations = this.options.reservations;
 
-        model.set('date', date);
+        if (!date){
+          this.showMiniNotification('Please select a date', 'danger');
+          return;
+        }    
 
-        reservations.add(model);    
+        model.set('date', date);
+        model.set('spaceNum', Math.round(Math.random() * (100-1)+1));
+
+        reservations.add(model);
+        this.showMiniNotification('Parking Space Successfully Booked', 'success')    
       },
 
       showInMaps: function(e){
         var id = $(e.target).data('id'),
             model = this.collection.get(id);
 
-        model.set('active', true)
+        if (this.options.currentActiveModel)
+          this.options.currentActiveModel.set('active', false);
+        model.set('active', true);
+        this.options.currentActiveModel = model;
+      },
+
+      activateResult: function(model){
+        if (model.get('active') !== true || $(event.target).hasClass('parking-lot'))
+          return;
+
+        var id = model.get('id'),
+            first = 
+
+        this.$el.find('.panel-collapse.in').removeClass('in');
+
+        this.$el.find('#'+id).addClass('in');
+        this.collection.remove(model);
+        this.collection.unshift(model);
+        this.render();
 
       }
     });
