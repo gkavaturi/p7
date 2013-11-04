@@ -6,6 +6,17 @@ __p+='<div class="container">\r\n   <div class="well row">\r\n    <div class="in
 }
 return __p;
 };
+Project07.tmpl.miniNotification = function(obj){
+var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
+with(obj||{}){
+__p+='<div class="fadeOut animated mini-notification '+
+((__t=( classNames ))==null?'':__t)+
+'">'+
+((__t=( message))==null?'':__t)+
+'\n</div>';
+}
+return __p;
+};
 Project07.tmpl.reservationItem = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){

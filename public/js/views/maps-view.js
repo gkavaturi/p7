@@ -136,16 +136,19 @@
                     });
 
         marker.setIcon({
-                    url: 'img/parking.png',
+                    url: 'img/parking-active.png',
                     scaledSize: new google.maps.Size(50, 50)
                   });
         this.options.recentMarker = marker;
       },
 
       showInResults: function(modelId){
+        if (this.options.recentModel)
+          this.options.recentModel.set('active', false);
         var result = this.options.results.get(modelId);
         result.set('active', true);
         this.highlightMarker(result);
+        this.options.recentModel = result;
       }
 
     });
