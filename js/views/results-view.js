@@ -3,7 +3,7 @@
 
       template: App.tmpl.results,
 
-      el: '#actions-wrapper',
+      el: '#actions',
 
       events: {
         'click .buy-now': 'reserveSlot',

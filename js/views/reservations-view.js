@@ -21,7 +21,7 @@
         this.collection.fetch({
           success: that.render,
           error: function(){
-            that.showMiniNotification('Fetching existing reservations failed', 'danger-lg');
+            that.showMiniNotification('Fetching existing reservations failed', 'danger danger-lg');
           }
         });
       },

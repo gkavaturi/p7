@@ -51,7 +51,7 @@
                  map: map
               });;
           if (!place.geometry) {
-            // Inform the user that a place was not found and return.
+            that.showMiniNotification('Place Not Found!', 'danger');
             return;
           }
 
@@ -84,7 +84,9 @@
             return;
           }
           results.reset();
-          data.forEach(function(obj){
+          data.forEach(function(obj, index){
+            if (index > 8)
+              return;
             var marker = new google.maps.Marker({
                   position: obj.geometry.location,
                   map: map,
@@ -119,6 +121,7 @@
             infoWindow.setContent(obj.name);
             // infoWindow.open(map, marker);
           });
+          // that.highlightMarker(results.at(0));
         });
       },
 
@@ -146,8 +149,8 @@
           this.options.recentModel.set('active', false);
         var result = this.options.results.get(modelId);
         result.set('active', true);
-        this.highlightMarker(result);
         this.options.recentModel = result;
+        window.location.href='#actions';
       }
 
     });
