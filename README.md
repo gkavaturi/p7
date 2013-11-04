@@ -1,5 +1,18 @@
 project07
 =========
 
-Front End Prototype fo reserving a parking space online. 
+Fully responsive Front End Prototype for an online parking space reservation system. 
+
+Tech Stack:
+
+HTML5, JavaScript, CSS3
+
+Libraries:
+
+Twitter Bootstrap
+Backbone
+Underscore
+jQuery
+
+Website: http://gkavaturi.github.io/p7/
 
