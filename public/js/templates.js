@@ -11,7 +11,7 @@ var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments
 with(obj||{}){
 __p+='<div class="fadeOut animated mini-notification '+
 ((__t=( classNames ))==null?'':__t)+
-'">'+
+'">\n  '+
 ((__t=( message))==null?'':__t)+
 '\n</div>';
 }

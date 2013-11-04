@@ -43,10 +43,16 @@
             model = this.collection.get(id),
             reservations = this.options.reservations;
 
+        if (!date){
+          this.showMiniNotification('Please select a date', 'danger');
+          return;
+        }    
+
         model.set('date', date);
         model.set('spaceNum', Math.round(Math.random() * (100-1)+1));
 
-        reservations.add(model);    
+        reservations.add(model);
+        this.showMiniNotification('Parking Space Successfully Booked', 'success')    
       },
 
       showInMaps: function(e){

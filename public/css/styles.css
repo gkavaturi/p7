@@ -10,11 +10,31 @@
   padding-top: 2px;
 }
 .shopping-cart-label {
-  padding: 0px 0px 0px 5px;
+  padding: 0px 0px 0px 10px;
 }
-#map-canvas {
-  width: 560px;
-  height: 560px;
+@media (min-width: 1200px) {
+  #map-canvas {
+    width: 560px;
+    height: 560px;
+  }
+}
+@media (max-width: 1199px) and (min-width: 992px) {
+  #map-canvas {
+    width: 475px;
+    height: 560px;
+  }
+}
+@media (max-width: 991px) and (min-width: 720px) {
+  #map-canvas {
+    width: 720px;
+    height: 560px;
+  }
+}
+@media (max-width: 719px) {
+  #map-canvas {
+    width: 100%;
+    height: 560px;
+  }
 }
 #reservations {
   table-layout: fixed;
@@ -22,4 +42,31 @@
 #reservations-wrapper {
   margin-top: 10px;
   margin-left: 0px;
+}
+.mini-notification {
+  position: fixed;
+  color: white;
+  margin: auto;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  z-index: 999;
+  font-size: 24px;
+  width: 320px;
+  height: 50px;
+  line-height: 25px;
+  padding: 10px;
+  border-radius: 7px;
+  text-align: center;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.mini-notification.danger {
+  background-color: #d9534f;
+}
+.mini-notification.success {
+  background-color: #47a447;
+  height: 75px;
 }

@@ -83,7 +83,6 @@
             console.log('ERROR: invalid response from server');
             return;
           }
-          console.log(data);
           results.reset();
           data.forEach(function(obj){
             var marker = new google.maps.Marker({
