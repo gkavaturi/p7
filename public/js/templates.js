@@ -20,7 +20,7 @@ return __p;
 Project07.tmpl.reservationItem = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<tr data-id="'+
+__p+='<tr class="reservation-item" data-id="'+
 ((__t=( id ))==null?'':__t)+
 '">\n  <td>'+
 ((__t=( name ))==null?'':__t)+
@@ -30,14 +30,14 @@ __p+='<tr data-id="'+
 ((__t=( date ))==null?'':__t)+
 '</td><td>Space No. '+
 ((__t=( spaceNum ))==null?'':__t)+
-'</td>\n  <td>\n    <button class="btn btn-danger row">\n      <span class="col-xs-12 col-sm-2 col-md-2 col-lg-2 glyphicon glyphicon-remove shopping-cart"></span>\n      <span class="hidden-xs hidden-sm col-md-10 col-lg-10 shopping-cart-label">Cancel Reservation</span>\n    </button>\n  </td>\n</tr>';
+'</td>\n  <td>\n    <button class="btn btn-danger row cancel-reservation">\n      <span class="col-xs-12 col-sm-2 col-md-2 col-lg-2 glyphicon glyphicon-remove shopping-cart"></span>\n      <span class="hidden-xs hidden-sm col-md-10 col-lg-10 shopping-cart-label">Cancel Reservation</span>\n    </button>\n  </td>\n</tr>';
 }
 return __p;
 };
 Project07.tmpl.reservations = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<h3>Active Reservations</h3>\n<table id="reservations" class="table">\n</table>';
+__p+='<h3>Active Reservations</h3>\n<table id="reservations" class="table">\n</table>\n<div class="no-reservations">\n  \n</div>';
 }
 return __p;
 };
