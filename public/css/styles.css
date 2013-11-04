@@ -33,6 +33,7 @@
 @media (max-width: 719px) {
   #map-canvas {
     width: 100%;
+    height: 480px;
   }
 }
 #reservations {

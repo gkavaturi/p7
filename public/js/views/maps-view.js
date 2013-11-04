@@ -146,8 +146,8 @@
           this.options.recentModel.set('active', false);
         var result = this.options.results.get(modelId);
         result.set('active', true);
-        this.highlightMarker(result);
         this.options.recentModel = result;
+        window.location.href='#actions-wrapper';
       }
 
     });
