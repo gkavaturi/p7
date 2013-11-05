@@ -2,7 +2,7 @@ window.Project07.tmpl = window.Project07.tmpl || {};
 Project07.tmpl.home = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<div class="container">\r\n   <div class="well row">\r\n    <div class="input-group">\r\n      <input type="text" id="search-query" class="form-control" placeholder="Start typing an address ...">\r\n      <span class="input-group-btn">\r\n        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" ></span></button>\r\n      </span>\r\n    </div><!-- /input-group -->\r\n  </div>\r\n  <div class="row">\r\n    <div id="maps-wrapper" class="col-md-6">\r\n      <!-- <h1>Maps</h1> -->\r\n      <div id="map-canvas">\r\n      </div>\r\n    </div>\r\n    <div id="actions" class="col-md-6">\r\n      \r\n    </div>\r\n  </div>\r\n  <div id="reservations-wrapper" class="row">\r\n\r\n  </div>\r\n</div>\r\n';
+__p+='<div class="container">\r\n   <div class="well row">\r\n    <div class="input-group">\r\n      <input type="text" id="search-query" class="form-control" placeholder="Start typing an address ...">\r\n      <span class="input-group-btn">\r\n        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" ></span></button>\r\n      </span>\r\n    </div><!-- /input-group -->\r\n  </div>\r\n  <div class="row">\r\n    <div id="maps" class="col-md-6">\r\n      <!-- <h1>Maps</h1> -->\r\n      <div id="map-canvas">\r\n      </div>\r\n    </div>\r\n    <div id="actions" class="col-md-6">\r\n      \r\n    </div>\r\n  </div>\r\n  <div id="reservations-wrapper" class="row">\r\n\r\n  </div>\r\n</div>\r\n';
 }
 return __p;
 };
@@ -63,7 +63,7 @@ return __p;
 Project07.tmpl.results = function(obj){
 var __t,__p='',__j=Array.prototype.join,print=function(){__p+=__j.call(arguments,'');};
 with(obj||{}){
-__p+='<h3 class="sub-title">Parking Spaces Found</h3>\n<div class="form-horizontal">\n  <div class="form-group">\n    <div class="hidden-xs col-sm-4 col-md-4 col-lg-3 control-label select-date">Select Date</div> \n    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9"><input type="date" class="form-control date" required/></div>\n  </div>\n</div>\n<div class="panel-group" id="accordion">\n\n  \n  \n</div>';
+__p+='<h3 class="sub-title">Parking Spaces Found</h3>\n<div class="form-horizontal">\n  <div class="form-group">\n    <div class="hidden-xs col-sm-4 col-md-4 col-lg-3 control-label select-date">Select Date</div> \n    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9"><input type="date" class="form-control date" placeholder="mm/dd/yyyy"/></div>\n  </div>\n</div>\n<div class="panel-group" id="accordion">\n</div>';
 }
 return __p;
 };

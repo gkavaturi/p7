@@ -10,7 +10,7 @@
         _.bindAll(this, 'highlightMarker');
         _.bindAll(this, 'showInResults');
 
-        google.maps.visualRefresh = true;
+        // google.maps.visualRefresh = true;
 
         this.options = options || {}; 
         this.render();
